@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #F7F7F5;
+  --bg-secondary: #ECEDEA;
+  --surface-card: #FFFFFF;
+  --text-primary: #17191C;
+  --text-secondary: #686B70;
+  --accent-orange: #FF5A1F;
+  --border-subtle: #E2E3E0;
+}
+
+/* Lenis smooth scrolling rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Global resets & typography for Luxury Light Theme */
+html {
+  background-color: #F7F7F5;
+  color: #17191C;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F7F7F5;
+  color: #17191C;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+}
+
+/* Standard native pointer behavior for all interactive controls */
+a, button, [role="button"], summary {
+  cursor: pointer;
+}
+
+input, textarea, select {
+  cursor: text;
+}
+
+/* Clean text selection */
+::selection {
+  background: #FF5A1F;
+  color: #FFFFFF;
+}
+
+/* Minimal Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F7F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D3CE;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5A1F;
+}
+
+/* 3D Transform & Perspective Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1400 {
+  perspective: 1400px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Subtle Studio Radial Floor Shadow */
+.studio-shadow {
+  background: radial-gradient(ellipse at center, rgba(23, 25, 28, 0.22) 0%, rgba(23, 25, 28, 0.08) 50%, transparent 75%);
+}
+
+/* Soft Studio Lighting Glow */
+.studio-light-glow {
+  pointer-events: none;
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 90, 31, 0.12) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+/* Glassmorphism for Light Theme */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 227, 224, 0.8);
+}
+
+/* Subtle text glow */
+.text-accent-glow {
+  text-shadow: 0 0 20px rgba(255, 90, 31, 0.25);
+}
+
+/* Reduced motion accessibility support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
